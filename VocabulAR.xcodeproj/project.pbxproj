@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,10 @@
 		89B3812025629B1900F38E6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3811F25629B1900F38E6A /* ContentView.swift */; };
 		89B3812225629B1900F38E6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B3812125629B1900F38E6A /* Assets.xcassets */; };
 		89B3812525629B1900F38E6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89B3812425629B1900F38E6A /* Preview Assets.xcassets */; };
+		89B3812E25629B3600F38E6A /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B3812D25629B3600F38E6A /* ReaderViewController.swift */; };
+		89B381342562C87D00F38E6A /* Constraints in Frameworks */ = {isa = PBXBuildFile; productRef = 89B381332562C87D00F38E6A /* Constraints */; };
+		89B381372562E5B800F38E6A /* CameraFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B381362562E5B800F38E6A /* CameraFeedView.swift */; };
+		89B3813A2563205E00F38E6A /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B381392563205E00F38E6A /* ReaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,9 @@
 		89B3812125629B1900F38E6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89B3812425629B1900F38E6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		89B3812625629B1900F38E6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89B3812D25629B3600F38E6A /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		89B381362562E5B800F38E6A /* CameraFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedView.swift; sourceTree = "<group>"; };
+		89B381392563205E00F38E6A /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B381342562C87D00F38E6A /* Constraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +62,9 @@
 			children = (
 				89B3811D25629B1900F38E6A /* VocabulARApp.swift */,
 				89B3811F25629B1900F38E6A /* ContentView.swift */,
+				89B3812D25629B3600F38E6A /* ReaderViewController.swift */,
+				89B381392563205E00F38E6A /* ReaderView.swift */,
+				89B381362562E5B800F38E6A /* CameraFeedView.swift */,
 				89B3812125629B1900F38E6A /* Assets.xcassets */,
 				89B3812625629B1900F38E6A /* Info.plist */,
 				89B3812325629B1900F38E6A /* Preview Content */,
@@ -85,6 +96,9 @@
 			dependencies = (
 			);
 			name = VocabulAR;
+			packageProductDependencies = (
+				89B381332562C87D00F38E6A /* Constraints */,
+			);
 			productName = VocabulAR;
 			productReference = 89B3811A25629B1900F38E6A /* VocabulAR.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +126,9 @@
 				Base,
 			);
 			mainGroup = 89B3811125629B1900F38E6A;
+			packageReferences = (
+				89B381322562C87D00F38E6A /* XCRemoteSwiftPackageReference "Constraints" */,
+			);
 			productRefGroup = 89B3811B25629B1900F38E6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B3812025629B1900F38E6A /* ContentView.swift in Sources */,
+				89B3813A2563205E00F38E6A /* ReaderView.swift in Sources */,
 				89B3811E25629B1900F38E6A /* VocabulARApp.swift in Sources */,
+				89B3812E25629B3600F38E6A /* ReaderViewController.swift in Sources */,
+				89B381372562E5B800F38E6A /* CameraFeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +300,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergevysotsky.VocabulAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergevysotsky.VocabulAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -328,6 +348,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		89B381322562C87D00F38E6A /* XCRemoteSwiftPackageReference "Constraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vysotskiyserhiy/Constraints.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		89B381332562C87D00F38E6A /* Constraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89B381322562C87D00F38E6A /* XCRemoteSwiftPackageReference "Constraints" */;
+			productName = Constraints;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 89B3811225629B1900F38E6A /* Project object */;
 }
