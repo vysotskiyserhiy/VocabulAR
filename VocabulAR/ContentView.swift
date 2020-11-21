@@ -9,8 +9,11 @@ import SwiftUI
 import ARKit
 
 struct ContentView: View {
-    @State private var readingImage: UIImage?// = UIImage(named: "ssh")
+    @State private var readingImage: UIImage?
     @State private var readString: String?
+    @State private var videoZoom: CGFloat = 0
+    @State private var videoTorch: Float = 0
+    
     var magnifierDiameter: CGFloat {
         readingImage == nil ? 5 : 200
     }
@@ -26,42 +29,66 @@ struct ContentView: View {
             #if targetEnvironment(simulator)
             Color.black.edgesIgnoringSafeArea(.all)
             #else
-            ReaderView(readingImage: $readingImage, readString: $readString, shouldRecognise: !showDict)
-                .edgesIgnoringSafeArea(.all)
+            ReaderView(
+                readingImage: $readingImage,
+                readString: $readString,
+                zoom: $videoZoom,
+                torch: $videoTorch,
+                shouldRecognise: !showDict
+            )
             #endif
             
             Group {
                 Color.clear.edgesIgnoringSafeArea(.all)
-                
                 Group {
-                    if isMagnified, let readingImage = readingImage, let word = readString {
+                    if isMagnified {
                         Color(.systemBackground)
                             .frame(width: magnifierDiameter, height: magnifierDiameter)
-                        Text(word)
+                        Image(uiImage: readingImage!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: magnifierDiameter, height: magnifierDiameter)
+                            .hidden()
+                        Text(readString!)
                             .font(.largeTitle)
+                            .bold()
                             .frame(width: magnifierDiameter, height: magnifierDiameter)
                             .sheet(isPresented: $showDict, content: {
-                                DictionaryView(text: word)
+                                DictionaryView(text: readString!)
                             })
                             .contentShape(Circle())
                             .onTapGesture {
                                 showDict.toggle()
                             }
-                            .foregroundColor(.primary)
-                            .onReceive(Timer.publish(every: 2, on: .main, in: .default).autoconnect(), perform: { _ in
-                                if showDict == false {
-                                    showDict.toggle()
-                                }
-                            })
+                            .foregroundColor(.red)
                     }
                 }.clipShape(Circle())
-            }.overlay(RedCircle(diameter: magnifierDiameter))
-            .offset(y: isMagnified ? magnifierDiameter : 0)
-            .animation(.default)
+            }
+            .offset(y: isMagnified ? magnifierDiameter / 1.3 : 0)
+            .transition(AnyTransition.opacity)
             
-            RedCircle(diameter: 5)
-            RedCircle(diameter: 20)
-        }.edgesIgnoringSafeArea(.all)
+            StrokedCircle(diameter: 5)
+            StrokedCircle(diameter: 20)
+            
+            VStack(spacing: 20) {
+                Spacer()
+                HStack {
+                    Image(systemName: "light.min")
+                    Slider(value: $videoTorch)
+                    Image(systemName: "light.max")
+                }
+                
+                HStack {
+                    Image(systemName: "minus.magnifyingglass")
+                    Slider(value: $videoZoom)
+                    Image(systemName: "plus.magnifyingglass")
+                }
+            }.padding(20)
+        }
+        .edgesIgnoringSafeArea(.all)
+        .animation(.default)
+        .accentColor(.red)
+        .foregroundColor(.red)
     }
 }
 
@@ -84,12 +111,12 @@ struct SchemeInvertModifier: ViewModifier {
     }
 }
 
-struct RedCircle: View {
+struct StrokedCircle: View {
     let diameter: CGFloat
     
     var body: some View {
         Circle()
-            .stroke(Color.red)
+            .stroke()
             .frame(width: diameter, height: diameter)
     }
 }

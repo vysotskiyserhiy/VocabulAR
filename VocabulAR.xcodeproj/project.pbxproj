@@ -15,6 +15,7 @@
 		89B381342562C87D00F38E6A /* Constraints in Frameworks */ = {isa = PBXBuildFile; productRef = 89B381332562C87D00F38E6A /* Constraints */; };
 		89B381372562E5B800F38E6A /* CameraFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B381362562E5B800F38E6A /* CameraFeedView.swift */; };
 		89B3813A2563205E00F38E6A /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B381392563205E00F38E6A /* ReaderView.swift */; };
+		89F1B4232569285900FA6B42 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1B4222569285900FA6B42 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		89B3812D25629B3600F38E6A /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
 		89B381362562E5B800F38E6A /* CameraFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedView.swift; sourceTree = "<group>"; };
 		89B381392563205E00F38E6A /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		89F1B4222569285900FA6B42 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				89B3812D25629B3600F38E6A /* ReaderViewController.swift */,
 				89B381392563205E00F38E6A /* ReaderView.swift */,
 				89B381362562E5B800F38E6A /* CameraFeedView.swift */,
+				89F1B4222569285900FA6B42 /* Common.swift */,
 				89B3812125629B1900F38E6A /* Assets.xcassets */,
 				89B3812625629B1900F38E6A /* Info.plist */,
 				89B3812325629B1900F38E6A /* Preview Content */,
@@ -159,6 +162,7 @@
 				89B3813A2563205E00F38E6A /* ReaderView.swift in Sources */,
 				89B3811E25629B1900F38E6A /* VocabulARApp.swift in Sources */,
 				89B3812E25629B3600F38E6A /* ReaderViewController.swift in Sources */,
+				89F1B4232569285900FA6B42 /* Common.swift in Sources */,
 				89B381372562E5B800F38E6A /* CameraFeedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,9 +18,4 @@ final class CameraFeedView: UIView {
         previewLayer.videoGravity = .resizeAspectFill
         previewLayer.connection?.videoOrientation = videoOrientation
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        previewLayer.frame = bounds
-    }
 }
