@@ -1,0 +1,25 @@
+update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    BUMP = latest_testflight_build_number + 1
+    sh("git add -A")
+    sh("git commit -m \"Beta upload #{BUMP}\"")
+
+    increment_build_number(build_number: BUMP)
+    build_app(
+      scheme: "VocabulAR",
+      export_xcargs: "-allowProvisioningUpdates",
+      clean: true
+    )
+
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+
+    commit_version_bump
+    add_git_tag
+    push_to_git_remote
+  end
+end

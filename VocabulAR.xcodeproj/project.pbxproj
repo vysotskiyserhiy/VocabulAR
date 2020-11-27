@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89AB7C722571B2FA0075BB4A /* VocabulAR.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VocabulAR.entitlements; sourceTree = "<group>"; };
 		89B3811A25629B1900F38E6A /* VocabulAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocabulAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B3811D25629B1900F38E6A /* VocabulARApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabulARApp.swift; sourceTree = "<group>"; };
 		89B3811F25629B1900F38E6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 		89B3811C25629B1900F38E6A /* VocabulAR */ = {
 			isa = PBXGroup;
 			children = (
+				89AB7C722571B2FA0075BB4A /* VocabulAR.entitlements */,
 				89B3811D25629B1900F38E6A /* VocabulARApp.swift */,
 				89B3811F25629B1900F38E6A /* ContentView.swift */,
 				89B3812D25629B3600F38E6A /* ReaderViewController.swift */,
@@ -291,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VocabulAR/VocabulAR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VocabulAR/Preview Content\"";
 				DEVELOPMENT_TEAM = 5W3SMC6NDZ;
@@ -303,8 +306,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergevysotsky.VocabulAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -313,6 +317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VocabulAR/VocabulAR.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"VocabulAR/Preview Content\"";
 				DEVELOPMENT_TEAM = 5W3SMC6NDZ;
@@ -325,8 +330,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergevysotsky.VocabulAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

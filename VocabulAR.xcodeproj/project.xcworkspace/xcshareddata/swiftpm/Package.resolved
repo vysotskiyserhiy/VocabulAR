@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Constraints",
+        "repositoryURL": "https://github.com/vysotskiyserhiy/Constraints.git",
+        "state": {
+          "branch": null,
+          "revision": "c440e93b3673bac68ce3bde4e59924bce1f946f9",
+          "version": "1.4.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
